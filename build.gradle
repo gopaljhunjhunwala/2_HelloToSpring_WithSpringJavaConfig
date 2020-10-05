@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'info.solidsoft.pitest' version '1.5.1'
+}
+
+group 'github.gopal'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    compile group: 'org.springframework', name: 'spring-context', version: '5.2.9.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testCompile group: 'org.testng', name: 'testng', version: '7.3.0'
+
+
+}
+
+test {
+    useTestNG()
+}
+
+pitest {
+    version='1.5.1'
+    testPlugin='testng'
+}
